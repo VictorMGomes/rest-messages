@@ -1,0 +1,28 @@
+{
+    "name": "victormgomes/rest-messages",
+    "description": "Rest API message standardization package for Laravel applications",
+    "version": "0.0.1",
+    "keywords": [
+        "laravel",
+        "translation",
+        "auto-translate",
+        "i18n"
+    ],
+    "homepage": "https://github.com/victormgomes/rest-messages",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Victor M. Gomes",
+            "email": "info@victormgomes.net"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Victormgomes\\RestMessages\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
