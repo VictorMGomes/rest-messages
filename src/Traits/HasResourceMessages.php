@@ -6,12 +6,12 @@ namespace Victormgomes\RestMessages\Traits;
 
 use Illuminate\Database\Eloquent\Model;
 use Victormgomes\RestMessages\Enums\CrudAction;
-use Victormgomes\RestMessages\MessageGenerator;
+use Victormgomes\RestMessages\RestMessages;
 
 trait HasResourceMessages
 {
     protected function message(Model|string|null $model = null, ?CrudAction $action = null): string
     {
-        return app(MessageGenerator::class)->generate($model, $action);
+        return app(RestMessages::class)->generate($model, $action);
     }
 }

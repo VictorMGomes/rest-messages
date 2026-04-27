@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Lang;
 use Illuminate\Support\Str;
 use Victormgomes\RestMessages\Enums\CrudAction;
 
-class MessageGenerator
+class RestMessages
 {
     public function generate(Model|string|null $model = null, ?CrudAction $action = null): string
     {
@@ -35,14 +35,14 @@ class MessageGenerator
             return class_basename($model);
         }
 
-        $routeParam = collect(request()->route()->parameters())
+        $routeParam = collect(request()->route()->parameters() ?? [])
             ->first(fn ($param) => $param instanceof Model);
 
         if ($routeParam) {
             return class_basename($routeParam);
         }
 
-        $controllerClass = request()->route()->getControllerClass();
+        $controllerClass = request()->route()?->getControllerClass();
         if ($controllerClass) {
             $className = class_basename($controllerClass);
 
@@ -89,8 +89,8 @@ class MessageGenerator
 
     private function detectAction(): CrudAction
     {
-        $method = request()->route()->getActionMethod();
-        $enum = CrudAction::tryFrom($method);
+        $method = request()->route()?->getActionMethod();
+        $enum = $method ? CrudAction::tryFrom($method) : null;
 
         if (! $enum) {
             return match ($method) {
