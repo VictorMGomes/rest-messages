@@ -1,7 +1,7 @@
 {
   "name": "victormgomes/rest-messages",
-  "description": "Rest API message standardization package for Laravel applications",
-  "version": "0.0.2",
+  "description": "Standardized message responses for REST resources",
+  "version": "0.0.3",
   "keywords": [
     "Victor M. Gomes",
     "laravel",
@@ -9,6 +9,16 @@
   ],
   "homepage": "https://github.com/victormgomes/rest-messages",
   "license": "MIT",
+  "support": {
+    "issues": "https://github.com/victormgomes/rest-messages/issues",
+    "source": "https://github.com/victormgomes/rest-messages"
+  },
+  "funding": [
+    {
+      "type": "github",
+      "url": "https://github.com/sponsors/VictorMGomes"
+    }
+  ],
   "authors": [
     {
       "name": "Victor M. Gomes",
